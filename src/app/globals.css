@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  
+  /* Applying custom background and cursor globally to the entire body */
+  background-image: url('/images/wallpaperflare.com_wallpaper.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keeps the background in a fixed position while scrolling */
+  background-repeat: no-repeat;
+  
+  /* The custom cursor rule has been removed to revert to the default cursor. */
+}
+
+/* Add a subtle dark overlay to ensure text is readable over the new background */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+  pointer-events: none; /* Add this line to allow cursor to pass through the overlay */
+}
+
+/* Styles for the new custom cursor element */
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  background-image: url('/cursors/cursor.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none; /* Allows clicks to pass through the cursor */
+  z-index: 9999; /* Ensure the custom cursor is always on top */
+  transition: transform 0.1s ease-out; /* Smooth follow effect */
+}

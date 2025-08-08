@@ -8,7 +8,7 @@ const Navbar = () => {
       {/* Logo / Your Name */}
       <Link href="/">
         <span className="text-2xl font-bold text-text-heading hover:text-accent transition-colors">
-          Shams's Portfolio
+          Shams&apos;s Portfolio
         </span>
       </Link>
 

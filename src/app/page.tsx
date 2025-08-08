@@ -25,7 +25,7 @@ export default function Home() {
         </h2>
         <p className="text-gray-400 text-center max-w-lg mb-8">
           I solve complex problems with a unique blend of technical engineering and creative communication.
-          I don't just build the application, I design the experience and craft the message. My portfolio showcases my journey through software development, video editing and graphic design.
+          I don&apos;t just build the application, I design the experience and craft the message. My portfolio showcases my journey through software development, video editing and graphic design.
         </p>
         <div className="flex gap-6">
           <a

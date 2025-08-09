@@ -1,6 +1,8 @@
 // FILE: src/app/resume/page.tsx
 "use client";
 
+import Link from 'next/link';
+
 export default function ResumePage() {
   const resumeUrl = "/resume/Md_Zaed_Hassan_Resume.pdf"; // Correct path to your resume PDF
   const resumePreviewUrl = "/resume/Md_Zaed_Hassan_resume_Preview.jpg"; // Correct filename casing
@@ -20,22 +22,22 @@ export default function ResumePage() {
           src={resumePreviewUrl}
           alt="Resume Preview"
           className="w-full h-auto object-contain"
-          onError={(e) => {
-            e.target.onerror = null;
-            e.target.src = 'https://placehold.co/800x1000/171717/ededed?text=Preview+Not+Available';
+          onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+            (e.target as HTMLImageElement).onerror = null;
+            (e.target as HTMLImageElement).src = 'https://placehold.co/800x1000/171717/ededed?text=Preview+Not+Available';
           }}
         />
       </div>
 
       {/* Download button */}
       <div className="mt-8">
-        <a href={resumeUrl} download>
+        <Link href={resumeUrl} passHref download>
           <button 
             className="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300"
           >
             Download Resume
           </button>
-        </a>
+        </Link>
       </div>
     </main>
   );

@@ -1,19 +1,16 @@
 // FILE: src/app/layout.tsx
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Roboto } from "next/font/google";
+import "@/app/globals.css";
 import Navbar from "@/components/navbar";
 import InteractiveBackground from "@/components/InteractiveBackground";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const roboto = Roboto({
+  weight: ['400', '500', '700', '900'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -29,12 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* This meta tag is crucial for mobile responsiveness */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${roboto.className} pt-20 antialiased`}>
         <InteractiveBackground />
         <Navbar />
         {children}

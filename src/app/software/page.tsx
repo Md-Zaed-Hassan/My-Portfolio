@@ -1,17 +1,17 @@
 // FILE: src/app/software/page.tsx
 
 import GitHubProjectsSection from '../../components/GitHubProjectsSection';
+import GradientTitle from '../../components/GradientTitle';
 
 export default function SoftwarePage() {
-  // Replace 'Md-Zaed-Hassan' with your actual GitHub username.
   const myGithubUsername = 'Md-Zaed-Hassan';
 
   return (
-    <main className="flex flex-col items-center p-8 min-h-screen bg-gray-100 dark:bg-gray-950 text-gray-900 dark:text-gray-100">
-      <h1 className="text-5xl font-bold text-blue-700 dark:text-blue-300">
+    <main className="flex flex-col items-center p-8 min-h-screen text-gray-900 dark:text-gray-100">
+      <GradientTitle>
         Software Engineer Portfolio
-      </h1>
-      <p className="mt-4 text-xl text-gray-700 dark:text-gray-300">
+      </GradientTitle>
+      <p className="mt-4 text-xl sm:text-2xl text-gray-400 text-center">
         Here are my Projects...
       </p>
 

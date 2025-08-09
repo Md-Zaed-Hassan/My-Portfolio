@@ -80,9 +80,6 @@ const GitHubProjectsSection = ({ githubUsername }) => {
     <section id="projects" className="w-full py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <div className="max-w-7xl mx-auto">
         {/* Section title */}
-        <h2 className="text-4xl font-extrabold text-center mb-12 text-blue-600 dark:text-blue-400">
-          My GitHub Projects
-        </h2>
 
         {/* Loading, Error, and No Projects Messages */}
         {isLoading && (

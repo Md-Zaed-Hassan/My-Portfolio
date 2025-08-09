@@ -2,16 +2,17 @@
 "use client";
 
 import Link from 'next/link';
+import GradientTitle from '../../components/GradientTitle';
 
 export default function ResumePage() {
   const resumeUrl = "/resume/Md_Zaed_Hassan_resume.pdf"; // Correct path to your resume PDF
-  const resumePreviewUrl = "/resume/Md_Zaed_Hassan_Resume_Preview.jpg"; // Corrected filename casing
+  const resumePreviewUrl = "/resume/Md_Zaed_Hassan_Resume_Preview.jpg"; // Correct filename casing
 
   return (
     <main className="flex flex-col items-center p-8 min-h-screen text-gray-900 dark:text-gray-100">
-      <h1 className="text-5xl font-bold text-blue-700 dark:text-blue-300">
+      <GradientTitle>
         My Resume
-      </h1>
+      </GradientTitle>
       <p className="mt-4 text-xl text-gray-700 dark:text-gray-300">
         Here&apos;s a preview of my resume.
       </p>

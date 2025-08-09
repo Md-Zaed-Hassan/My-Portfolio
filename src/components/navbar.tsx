@@ -7,7 +7,6 @@ import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isHovered, setIsHovered] = useState(false); // New state to track hover
   const pathname = usePathname();
 
   const handleLinkClick = () => {
@@ -20,11 +19,7 @@ const Navbar = () => {
   `;
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full p-6 z-50 transition-all duration-300 ${isHovered ? 'bg-white/5 backdrop-blur-md opacity-100' : 'bg-transparent opacity-5 hover:opacity-100'}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <nav className="fixed top-0 left-0 w-full p-6 z-50 transition-all duration-300 bg-white/5 backdrop-blur-md opacity-100 md:opacity-5 md:hover:opacity-100">
       <div className="flex justify-between items-center">
         {/* Logo / Your Name */}
         <Link href="/">

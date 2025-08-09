@@ -7,16 +7,13 @@ import React, { useState, useEffect } from 'react';
 const Modal = ({ imageUrl, onClose, altText }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-md animate-fade-in">
-      {/* Outer container for the modal, allowing it to be larger */}
-      <div className="relative flex items-center justify-center max-w-[90vw] max-h-[90vh] transform transition-transform duration-300 scale-95 animate-scale-up">
-        {/* Close button for the modal */}
+      <div className="relative max-w-[90vw] max-h-[90vh] transform transition-transform duration-300 scale-95 animate-scale-up">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-white text-3xl font-bold bg-white bg-opacity-10 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300 hover:bg-opacity-20 hover:scale-110"
         >
           <img src="/x-button.png" alt="Close button" className="w-6 h-6" />
         </button>
-        {/* Full-size image container that ensures proper scaling */}
         <img
           src={imageUrl}
           alt={altText}
@@ -35,7 +32,6 @@ const DesignGallery = () => {
   useEffect(() => {
     const fetchDesigns = async () => {
       try {
-        // Fetch designs from the new API route
         const response = await fetch('/api/designs');
         if (!response.ok) {
           throw new Error('Failed to fetch designs.');
@@ -51,7 +47,7 @@ const DesignGallery = () => {
 
   return (
     <section className="container mx-auto p-8">
-      {/* Responsive grid for the gallery */}
+      {/* The grid changes its number of columns based on screen size */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-fade-in-up">
         {designs.map((design) => (
           <div
@@ -68,15 +64,12 @@ const DesignGallery = () => {
                 e.target.src = 'https://placehold.co/500x500/171717/ededed?text=Image+Not+Found';
               }}
             />
-            {/* Overlay to show alt text on hover */}
             <div className="absolute inset-0 bg-white/10 backdrop-blur-md flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <p className="text-white text-center text-lg font-semibold">{design.alt}</p>
             </div>
           </div>
         ))}
       </div>
-
-      {/* Render the modal if an image is selected */}
       {selectedImage && (
         <Modal imageUrl={selectedImage.src} altText={selectedImage.alt} onClose={() => setSelectedImage(null)} />
       )}

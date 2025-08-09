@@ -1,10 +1,10 @@
-//FILE: src/app/layout.tsx
+// FILE: src/app/layout.tsx
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
-import InteractiveBackground from "@/components/InteractiveBackground"; // Import the InteractiveBackground component
+import InteractiveBackground from "@/components/InteractiveBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,11 +28,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* This meta tag is crucial for mobile responsiveness */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <InteractiveBackground /> {/* Render the interactive background component here */}
-        {/* We put the Navbar right here! */}
+        <InteractiveBackground />
         <Navbar />
         {children}
       </body>

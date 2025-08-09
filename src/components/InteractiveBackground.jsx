@@ -1,7 +1,7 @@
 // src/components/InteractiveBackground.jsx
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 // Define the number of particles for the circuit-like animation.
 const NUM_PARTICLES = 40; // Optimized for better performance
@@ -54,6 +54,7 @@ const InteractiveBackground = () => {
   const particlesRef = useRef([]);
   // Use a ref to store the cursor's position for interactivity.
   const mouseRef = useRef({ x: -100, y: -100 });
+  const [isMobile, setIsMobile] = useState(false); // New state for mobile detection
   
   // Function to draw the background grid, giving the PCB effect
   const drawGrid = (ctx, canvas) => {
@@ -84,6 +85,7 @@ const InteractiveBackground = () => {
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+      setIsMobile(window.innerWidth < 768); // Detect mobile screen size
     };
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
@@ -161,7 +163,7 @@ const InteractiveBackground = () => {
   return (
     <div>
       <canvas ref={canvasRef} className="fixed top-0 left-0 -z-10"></canvas>
-      <div ref={cursorRef} id="custom-cursor"></div>
+      {!isMobile && <div ref={cursorRef} id="custom-cursor"></div>}
     </div>
   );
 };

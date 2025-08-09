@@ -35,6 +35,14 @@ const Navbar = () => {
             </span>
           </Link>
         </li>
+        {/* New link for the Resume page */}
+        <li>
+          <Link href="/resume">
+            <span className="text-lg text-text-primary hover:text-accent transition-colors">
+              Resume
+            </span>
+          </Link>
+        </li>
       </ul>
     </nav>
   );

@@ -26,7 +26,8 @@ body {
   background-attachment: fixed; /* Keeps the background in a fixed position while scrolling */
   background-repeat: no-repeat;
   
-  /* The custom cursor rule has been removed to revert to the default cursor. */
+  /* Hide the default cursor */
+  cursor: none !important;
 }
 
 /* Add a subtle dark overlay to ensure text is readable over the new background */

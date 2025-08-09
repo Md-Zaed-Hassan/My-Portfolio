@@ -3,7 +3,7 @@
 
 export default function ResumePage() {
   const resumeUrl = "/resume/Md_Zaed_Hassan_Resume.pdf"; // Correct path to your resume PDF
-  const resumePreviewUrl = "/resume/Md_Zaed_Hassan_Resume_Preview.jpg"; // Path to a preview image of your resume
+  const resumePreviewUrl = "/resume/Md_Zaed_Hassan_resume_Preview.jpg"; // Correct filename casing
 
   return (
     <main className="flex flex-col items-center p-8 min-h-screen text-gray-900 dark:text-gray-100">
@@ -11,7 +11,7 @@ export default function ResumePage() {
         My Resume
       </h1>
       <p className="mt-4 text-xl text-gray-700 dark:text-gray-300">
-        Here's a preview of my resume.
+        Here&apos;s a preview of my resume.
       </p>
 
       {/* Container for the static image preview */}

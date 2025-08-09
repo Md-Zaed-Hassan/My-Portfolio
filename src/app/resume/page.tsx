@@ -4,7 +4,7 @@
 import Link from 'next/link';
 
 export default function ResumePage() {
-  const resumeUrl = "/resume/Md_Zaed_Hassan_Resume.pdf"; // Correct path to your resume PDF
+  const resumeUrl = "/resume/Md_Zaed_Hassan_resume.pdf"; // Correct path to your resume PDF
   const resumePreviewUrl = "/resume/Md_Zaed_Hassan_Resume_Preview.jpg"; // Corrected filename casing
 
   return (

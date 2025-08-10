@@ -3,7 +3,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "@/app/globals.css";
-import Navbar from "@/components/navbar";
+import ResponsiveNav from "@/components/ResponsiveNav";
 import InteractiveBackground from "@/components/InteractiveBackground";
 
 const roboto = Roboto({
@@ -30,7 +30,7 @@ export default function RootLayout({
       </head>
       <body className={`${roboto.className} pt-20 antialiased`}>
         <InteractiveBackground />
-        <Navbar />
+        <ResponsiveNav />
         {children}
       </body>
     </html>
